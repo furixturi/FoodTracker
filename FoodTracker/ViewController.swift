@@ -25,7 +25,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
     }
-
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+    }
+    
     //MARK: UITextFieldDelegate
     // Called when "Return(Done)" is tapped.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
