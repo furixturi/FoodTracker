@@ -17,5 +17,14 @@ class RatingControl: UIStackView {
         // Drawing code
     }
     */
-
+    //MARK: Initialization
+    //For programmatically instantiate the view, called by Interface Builder at app development
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    //For loading the vie from the storyboard at run time
+    //"required" is required to indicate the subclass of this must also implement the initializer
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
