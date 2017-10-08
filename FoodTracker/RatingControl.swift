@@ -9,6 +9,9 @@
 import UIKit
 
 class RatingControl: UIStackView {
+    //MARK: Properties
+    private var ratingButtons = [UIButton]()
+    var rating = 0
 
     //MARK: Initialization
     //For programmatically instantiate the view, called by Interface Builder at app development
