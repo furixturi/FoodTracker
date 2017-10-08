@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eJK-9p-XmP">
-                                <rect key="frame" x="16" y="40" width="343" height="447.5"/>
+                                <rect key="frame" x="16" y="40" width="339" height="443.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ0-RL-xgN">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -29,7 +29,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhC-Bj-cHq">
-                                        <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="339" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -41,11 +41,11 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G0I-sz-F2D"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Fa8-fO-DI6">
-                                        <rect key="frame" x="0.0" y="104.5" width="343" height="343"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="374" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Fa8-fO-DI6">
+                                        <rect key="frame" x="0.0" y="104.5" width="339" height="339"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Fa8-fO-DI6" secondAttribute="height" multiplier="1:1" id="Ehv-rz-U9t"/>
+                                            <constraint firstAttribute="width" secondItem="Fa8-fO-DI6" secondAttribute="height" multiplier="1:1" id="7Cm-Ig-45N"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="e3L-n5-xlx" appends="YES" id="NEi-WO-Wba"/>
@@ -53,16 +53,15 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nhC-Bj-cHq" secondAttribute="trailing" id="Sri-DF-mw0"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fa8-fO-DI6" secondAttribute="trailing" id="ch1-JL-2D5"/>
+                                    <constraint firstItem="nhC-Bj-cHq" firstAttribute="trailing" secondItem="eJK-9p-XmP" secondAttribute="trailing" id="rN9-wo-Izt"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eJK-9p-XmP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="09n-uw-UcS"/>
-                            <constraint firstItem="eJK-9p-XmP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kq4-bC-Iku"/>
-                            <constraint firstItem="eJK-9p-XmP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="q7h-qa-hIJ"/>
+                            <constraint firstItem="eJK-9p-XmP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="C4S-Qb-eCB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eJK-9p-XmP" secondAttribute="trailing" constant="20" id="RgQ-nM-j3P"/>
+                            <constraint firstItem="eJK-9p-XmP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pTD-s9-XQA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
