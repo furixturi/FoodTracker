@@ -54,10 +54,19 @@ import UIKit
         // Empty the ratingButtons array
         ratingButtons.removeAll()
         
+        // Load button images
+        let bundle = Bundle(for: type(of: self))
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        
         // Create the buttons
         for _ in 0..<starCount {
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected]) // a combination of states
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false // Disables the button's auto-generated constraints
