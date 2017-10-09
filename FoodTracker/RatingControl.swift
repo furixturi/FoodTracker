@@ -99,6 +99,9 @@ import UIKit
             // Add the new button to the ratingButtons array
             ratingButtons.append(button)
         }
+        
+        // update button state according to initial rating data
+        updateButtonSelectionStates()
     }
     
     private func updateButtonSelectionStates() {
