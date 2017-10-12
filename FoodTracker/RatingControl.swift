@@ -34,7 +34,7 @@ import UIKit
         super.init(frame: frame)
         setupButtons()
     }
-    //For loading the vie from the storyboard at run time
+    //For loading the view from the storyboard at run time
     //"required" is required to indicate the subclass of this must also implement the initializer
     required init(coder: NSCoder) {
         super.init(coder: coder)
