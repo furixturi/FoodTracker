@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         present(imagePickerController, animated: true, completion: nil)
     }
     
-    //MARK: UITextFieldDelegate
+    //MARK: UITextField Delegate
     // Called when "Return(Done)" is tapped.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
