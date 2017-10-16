@@ -9,9 +9,14 @@
 import UIKit
 
 class MealTableViewController: UITableViewController {
-
+    //MARK: Properties
+    var meals = [Meal]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Load the sample data
+        loadSampleMeals()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,26 +31,41 @@ class MealTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    // A TableViewController automatically adopts the UITableViewDataSource protocol and needs to implement the following three methods
+    // How many sections to show
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // Display 1 section
+        return 1
     }
 
+    // How many rows in each section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // Display this number of rows in one section
+        return meals.count
     }
 
-    /*
+    // Each row has one cell. Configure how this cell looks
+    // cellForRowAt asks for only the cells for rows that are currently being displayed and is therefore efficient
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        // Table view cells are reused and should be dequeued using a cell identifier
+        let cellIdentifier = "MealTableViewCell"
+        
+        // Downcast the type of the cell to our custom cell subclass, MealTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
 
-        // Configure the cell...
+        // Fetches the appropriate meal for the data source layout
+        let meal = meals[indexPath.row]
 
+        // Configure the cell
+        cell.nameLabel.text = meal.name
+        cell.photoImageView.image = meal.photo
+        cell.ratingControl.rating = meal.rating
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +111,28 @@ class MealTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: Private Methods
+    private func loadSampleMeals(){
+        // Load the sample images
+        let photo1 = UIImage(named: "meal1")
+        let photo2 = UIImage(named: "meal2")
+        let photo3 = UIImage(named: "meal3")
+        
+        // Create three sample meal objects
+        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4) else {
+            fatalError("Unable to instantiate meal1")
+        }
+        
+        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
+            fatalError("Unable to instantiate meal2")
+        }
+        
+        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
+            fatalError("Unable to instantiate meal3")
+        }
+     
+        meals += [meal1, meal2, meal3]
+    }
 
 }
