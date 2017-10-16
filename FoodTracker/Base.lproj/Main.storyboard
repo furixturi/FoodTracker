@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-260" y="133.5832083958021"/>
         </scene>
-        <!--Meal View Controller-->
+        <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="14q-QR-KZK"/>
+                    <navigationItem key="navigationItem" title="New Meal" id="14q-QR-KZK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PUH-fQ-Urd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GY6-Ta-qBq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="nhC-Bj-cHq" id="4Sw-Pr-eJ6"/>
                         <outlet property="photoImageView" destination="Fa8-fO-DI6" id="hgL-oL-Sgc"/>
