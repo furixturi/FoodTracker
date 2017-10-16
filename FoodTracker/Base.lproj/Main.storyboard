@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Meal Table View Controller-->
+        <!--Your Meals-->
         <scene sceneID="6MW-SK-3cG">
             <objects>
                 <tableViewController id="Ce5-gs-7JX" customClass="MealTableViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,13 @@
                             <outlet property="delegate" destination="Ce5-gs-7JX" id="ong-x2-uyg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qbi-Vf-Pd0"/>
+                    <navigationItem key="navigationItem" title="Your Meals" id="qbi-Vf-Pd0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="w1v-6u-dsY">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="0y3-Sa-s6q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26z-VJ-J31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eJK-9p-XmP">
-                                <rect key="frame" x="16" y="40" width="339" height="429"/>
+                                <rect key="frame" x="16" y="84" width="339" height="429"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhC-Bj-cHq">
                                         <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
