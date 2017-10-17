@@ -129,9 +129,7 @@ class MealTableViewController: UITableViewController {
                     else {
                         fatalError("The selected cell is not being displayed by the table")
                 }
-                print(indexPath.row)
                 let selectedMeal = meals[indexPath.row]
-                print(selectedMeal.name)
                 mealDetailViewController.meal = selectedMeal
             
             default:
@@ -142,12 +140,26 @@ class MealTableViewController: UITableViewController {
     
     //MARK: Actinos
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+
         if let sourceViewController = sender.source as? MealViewController,
             let meal = sourceViewController.meal {
-            // Add a new meal
-            let newIndexPath = IndexPath(row: meals.count, section: 0)
-            meals.append(meal)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            // If the user has selected a cell before going to detail view, meaning it is an edit
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                
+                // Update an existing meal
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                
+            } else {
+                
+                // Add a new meal
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                
+                meals.append(meal)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                
+            }
         }
     }
     
