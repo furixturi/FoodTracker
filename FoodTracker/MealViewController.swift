@@ -67,6 +67,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: UITextField Delegate
     // Called when "Return(Done)" is tapped.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
