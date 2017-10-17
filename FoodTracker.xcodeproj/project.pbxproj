@@ -87,11 +87,11 @@
 			children = (
 				5816A60C1F88F92800B0FFA7 /* Main.storyboard */,
 				5816A6081F88F92800B0FFA7 /* AppDelegate.swift */,
+				58A074D31F94B9AF00661B47 /* MealTableViewCell.swift */,
+				58A074D51F94C5DE00661B47 /* MealTableViewController.swift */,
 				5816A60A1F88F92800B0FFA7 /* MealViewController.swift */,
 				5816A6281F8A802300B0FFA7 /* RatingControl.swift */,
 				58A074CF1F8CF09B00661B47 /* Meal.swift */,
-				58A074D31F94B9AF00661B47 /* MealTableViewCell.swift */,
-				58A074D51F94C5DE00661B47 /* MealTableViewController.swift */,
 				5816A60F1F88F92800B0FFA7 /* Assets.xcassets */,
 				5816A6111F88F92800B0FFA7 /* LaunchScreen.storyboard */,
 				5816A6141F88F92800B0FFA7 /* Info.plist */,
