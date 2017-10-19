@@ -78,14 +78,18 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways
+        print("==============CANCEL==============")
+        print("presentingViewController: \(presentingViewController)")
+        print("navigationController: \(navigationController)")
+        print("===========END CANCEL LOG============")
         
-        // If the view was presented by a UINavigationController, it is presented by the user clicking add button
-        let isPresentingInAddMealModel = presentingViewController is UINavigationController
+        // Only Presented Modally segue has a presentingViewController
+        let isPresentingInAddMealModal = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealModel {
+        if isPresentingInAddMealModal {
             dismiss(animated: true, completion: nil)
         }
-        //
+        // It is pushed in a navigation stack
         else if let owningNavigationController = navigationController {
             owningNavigationController.popViewController(animated: true)
         }
