@@ -16,24 +16,31 @@ class Meal: NSObject, NSCoding {
     var photo: UIImage?
     var rating: Int
     
+    // MARK: Archiving Paths
+    // For saving and reading data in the file system
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
+
+    // MARK: Types
     struct PropertyKey {
         static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
     }
     
-    // MARK: Archiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
-
     //MARK: Initialization
     init?(name: String, photo: UIImage?, rating: Int) {
         // The name must not be empty
         guard !name.isEmpty else {
             return nil
         }
+        
         // The rating must be between 0 and 5 inclusively
         guard (rating >= 0) && (rating <= 5) else {
+            return nil
+        }
+        
+        if name.isEmpty || rating < 0 {
             return nil
         }
         
@@ -62,7 +69,7 @@ class Meal: NSObject, NSCoding {
         }
         
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
-        let rating = aDecoder.decodeObject(forKey: PropertyKey.rating) as! Int
+        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         // Must call designated initializer
         self.init(name: name, photo: photo, rating: rating)
